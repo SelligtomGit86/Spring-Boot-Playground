@@ -24,13 +24,23 @@ public class UserController {
     }
 
     @GetMapping("/{id}")
-    public Optional<User> findById(@PathVariable int id){
-        return userRepository.findById(id);
+    public String findById(@PathVariable int id, Model model){
+
+        Optional<User> user = userRepository.findById(id);
+
+        if(user.isPresent()){
+            model.addAttribute("user", user.get());
+            return "user/user";
+        }
+        return "home/index";
     }
 
     @GetMapping("/all")
-    public List<User> findAll(){
-        return userRepository.findAll();
+    public String findAll(Model model){
+        List<User> users = userRepository.findAll();
+
+        model.addAttribute("users", users);
+        return "user/userslist";
     }
 
 }
