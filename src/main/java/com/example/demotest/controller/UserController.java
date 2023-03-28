@@ -1,6 +1,8 @@
 package com.example.demotest.controller;
 
+import com.example.demotest.model.Event;
 import com.example.demotest.model.User;
+import com.example.demotest.repository.EventRepository;
 import com.example.demotest.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -16,9 +18,12 @@ public class UserController {
 
     private final UserRepository userRepository;
 
+    private final EventRepository eventRepository;
+
     @Autowired
-    public UserController(UserRepository userRepository) {
+    public UserController(UserRepository userRepository, EventRepository eventRepository) {
         this.userRepository = userRepository;
+        this.eventRepository = eventRepository;
     }
 
     @GetMapping("/{id}")
@@ -51,6 +56,14 @@ public class UserController {
     @PostMapping("/submitnew")
     public String addUser(@ModelAttribute("user") User user) {
         userRepository.addUser(user);
+
+        Event e = new Event();
+        e.setEventType("ADDING_USER");
+        e.setEventName("Nouvel utilisateur ajouté : " + user.getUsername());
+        e.setEventDesc("Un nouvel utilisateur vient de s'inscrire !");
+
+        eventRepository.addEvent(e);
+
         return "user/registration_success";
     }
 
