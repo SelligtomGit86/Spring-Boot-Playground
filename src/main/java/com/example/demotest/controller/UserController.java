@@ -5,9 +5,7 @@ import com.example.demotest.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Optional;
@@ -42,5 +40,24 @@ public class UserController {
         model.addAttribute("users", users);
         return "user/userslist";
     }
+
+    @GetMapping("/new")
+    public String showUserForm(Model model) {
+        User user = new User();
+        model.addAttribute("user", user);
+        return "user/add_user_form";
+    }
+
+    @PostMapping("/submitnew")
+    public String addUser(@ModelAttribute("user") User user){
+        userRepository.addUser(user);
+
+        System.out.println("new user created : ");
+        System.out.println(user);
+
+        return "user/registration_success";
+
+    }
+
 
 }

@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Registration Success</title>
+</head>
+<body>
+<div align="center">
+    <h2>Registration Succeeded!</h2>
+    <span>Pseudo :</span><span th:text="${user.username}"></span><br/>
+    <span>Prénom :</span><span th:text="${user.firstname}"></span><br/>
+    <span>Nom :</span><span th:text="${user.lastname}"></span><br/>
+
+    <a th:href="@{/user/all}"> Back to Users List</a>
+</div>
+</body>
+</html>
