@@ -1,9 +1,7 @@
 package com.example.demotest.controller;
 
 import com.example.demotest.model.Event;
-import com.example.demotest.model.User;
 import com.example.demotest.repository.EventRepository;
-import com.example.demotest.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

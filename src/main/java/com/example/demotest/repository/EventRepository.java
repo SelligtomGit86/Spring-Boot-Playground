@@ -1,9 +1,7 @@
 package com.example.demotest.repository;
 
 import com.example.demotest.mapper.EventMapper;
-import com.example.demotest.mapper.UserMapper;
 import com.example.demotest.model.Event;
-import com.example.demotest.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
