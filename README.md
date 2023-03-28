@@ -11,3 +11,4 @@ http://localhost:8080
 # Controllers
 - Home (http://localhost:8080)
 - User (http://localhost:8080/user)
+- Events (http://localhost:8080/events)
