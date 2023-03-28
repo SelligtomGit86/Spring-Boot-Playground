@@ -49,14 +49,26 @@ public class UserController {
     }
 
     @PostMapping("/submitnew")
-    public String addUser(@ModelAttribute("user") User user){
+    public String addUser(@ModelAttribute("user") User user) {
         userRepository.addUser(user);
-
-        System.out.println("new user created : ");
-        System.out.println(user);
-
         return "user/registration_success";
+    }
 
+    @GetMapping("/delete/{id}")
+    public String deleteUser(@PathVariable int id, Model model) {
+        Optional<User> user = userRepository.findById(id);
+
+        if(user.isPresent()){
+            int isDeleted = userRepository.deleteUser(id);
+
+            if(isDeleted == 1){
+                model.addAttribute("user", user.get());
+                return "user/delete_success";
+            }
+            return "user/delete_error";
+        }else{
+            return "user/delete_error";
+        }
     }
 
 

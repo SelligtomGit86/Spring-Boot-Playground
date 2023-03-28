@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Removal Success</title>
+</head>
+<body>
+<div align="center">
+    <h2>Removal has been successful </h2>
+
+    <h1> Following user has been deleted from our database !</h1>
+
+    <span>Pseudo :</span><span th:text="${user.username}"></span><br/>
+    <span>Prénom :</span><span th:text="${user.firstname}"></span><br/>
+    <span>Nom :</span><span th:text="${user.lastname}"></span><br/>
+
+    <a th:href="@{/user/all}"> Back to Users List</a>
+</div>
+</body>
+</html>

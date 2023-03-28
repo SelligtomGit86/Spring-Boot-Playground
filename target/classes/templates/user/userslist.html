@@ -16,6 +16,7 @@
                 <th>Pseudo</th>
                 <th>Prénom</th>
                 <th>Nom</th>
+                <th>Actions</th>
             </tr>
         </thead>
         <tbody>
@@ -24,11 +25,10 @@
                 <td th:text="${user.username}"></td>
                 <td th:text="${user.firstname}"></td>
                 <td th:text="${user.lastname}"></td>
-                <!-- <td> <a th:href="@{/updateUser/{id}(id=${user.id})}"
-                class="btn btn-primary">Update</a>
-            <a th:href="@{/deleteUser/{id}(id=${user.id})}"
-               class="btn btn-danger">Delete</a>
-        </td> -->
+                <td> 
+                    <!-- <a th:href="@{/updateUser/{id}(id=${user.id})}" class="btn btn-primary">Update</a> -->
+                    <a th:href="@{/user/delete/{id}(id=${user.id})}" class="btn btn-danger">Delete</a>
+                </td>
             </tr>
         </tbody>
     </table>

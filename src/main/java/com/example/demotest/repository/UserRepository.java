@@ -41,4 +41,10 @@ public class UserRepository {
 
         return jdbcTemplate.query(query, userMapper, id).stream().findFirst();
     }
+
+    public int deleteUser(int id) {
+        String query = "DELETE FROM users WHERE id = ?";
+        return jdbcTemplate.update(query, id);
+
+    }
 }
