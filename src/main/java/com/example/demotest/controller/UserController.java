@@ -30,7 +30,7 @@ public class UserController {
             model.addAttribute("user", user.get());
             return "user/user";
         }
-        return "home/index";
+        return "errors/user_not_found";
     }
 
     @GetMapping("/all")
@@ -67,7 +67,7 @@ public class UserController {
             }
             return "user/delete_error";
         }else{
-            return "user/delete_error";
+            return "errors/user_not_found";
         }
     }
 
