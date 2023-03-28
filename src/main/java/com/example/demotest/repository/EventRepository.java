@@ -7,6 +7,7 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
+import java.util.Optional;
 
 @Repository
 public class EventRepository {
@@ -26,5 +27,15 @@ public class EventRepository {
         String query = "SELECT * FROM events";
 
         return  jdbcTemplate.query(query, eventMapper);
+    }
+    public Optional<Event> findById(int id){
+        String query = "SELECT * FROM events WHERE id = ?";
+
+        return  jdbcTemplate.query(query, eventMapper, id).stream().findFirst();
+    }
+
+    public int deleteById(int id) {
+        String query = "DELETE FROM events WHERE id = ?";
+        return jdbcTemplate.update(query, id);
     }
 }
