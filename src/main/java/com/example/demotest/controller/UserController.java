@@ -71,5 +71,34 @@ public class UserController {
         }
     }
 
+    @GetMapping("/update/{id}")
+    public String updateUserForm(@PathVariable int id, Model model) {
+        Optional<User> user = userRepository.findById(id);
+
+        if(user.isPresent()) {
+            model.addAttribute("user", user.get());
+            return "user/update_form";
+        }
+        return "errors/user_not_found";
+    }
+
+    @PostMapping("/update/submit")
+    public String updateUserSubmission(@ModelAttribute("user") User user, Model model) {
+        Optional<User> user1 = userRepository.findById(user.getId());
+
+        if(user1.isPresent()){
+            int isDeleted = userRepository.updateUser(user.getUsername(), user.getFirstname(), user.getLastname(), user.getId());
+
+            if(isDeleted == 1){
+                model.addAttribute("user", user);
+                return "user/delete_success";
+            }
+            return "user/delete_error";
+        }else{
+            return "errors/user_not_found";
+        }
+    }
+
+
 
 }

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Update User Form</title>
+</head>
+<body>
+    <div align="center">
+      <h1>Update User form</h1>
+      <form action="#" th:action="@{/user/update/submit}" method="post" th:object="${user}">
+        <input type="hidden" th:field="*{id}" />
+
+        <label>Nom d'utilisateur : </label>
+        <input type="text" th:field="*{username}" /><br />
+  
+        <label>Prénom : </label>
+        <input type="text" th:field="*{firstname}" /><br />
+  
+        <label>Nom : </label>
+        <input type="text" th:field="*{lastname}" /><br />
+  
+        <button type="submit">Mettre à jour</button>
+      </form>
+      <a th:href="@{/user/all}"> Back to Users List</a>
+  
+    </div>
+  </body>
+</html>
