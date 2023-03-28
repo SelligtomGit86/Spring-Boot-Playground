@@ -1,6 +1,10 @@
 /Users/serli/Desktop/Spring-Boot-Playground/src/main/java/com/example/demotest/controller/HomeController.java
+/Users/serli/Desktop/Spring-Boot-Playground/src/main/java/com/example/demotest/repository/EventRepository.java
+/Users/serli/Desktop/Spring-Boot-Playground/src/main/java/com/example/demotest/mapper/EventMapper.java
+/Users/serli/Desktop/Spring-Boot-Playground/src/main/java/com/example/demotest/model/Event.java
 /Users/serli/Desktop/Spring-Boot-Playground/src/main/java/com/example/demotest/model/User.java
 /Users/serli/Desktop/Spring-Boot-Playground/src/main/java/com/example/demotest/repository/UserRepository.java
 /Users/serli/Desktop/Spring-Boot-Playground/src/main/java/com/example/demotest/controller/UserController.java
 /Users/serli/Desktop/Spring-Boot-Playground/src/main/java/com/example/demotest/DemotestApplication.java
+/Users/serli/Desktop/Spring-Boot-Playground/src/main/java/com/example/demotest/controller/EventController.java
 /Users/serli/Desktop/Spring-Boot-Playground/src/main/java/com/example/demotest/mapper/UserMapper.java

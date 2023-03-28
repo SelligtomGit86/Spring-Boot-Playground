@@ -1,6 +1,6 @@
-com/example/demotest/controller/UserController.class
-com/example/demotest/mapper/UserMapper.class
 com/example/demotest/repository/UserRepository.class
 com/example/demotest/DemotestApplication.class
 com/example/demotest/controller/HomeController.class
+com/example/demotest/controller/UserController.class
+com/example/demotest/mapper/UserMapper.class
 com/example/demotest/model/User.class
