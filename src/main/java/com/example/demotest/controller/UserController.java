@@ -75,6 +75,14 @@ public class UserController {
             int isDeleted = userRepository.deleteUser(id);
 
             if(isDeleted == 1){
+
+                Event e = new Event();
+                e.setEventType("DELETING_USER");
+                e.setEventName("Utilisateur supprimé : " + user.get().getUsername());
+                e.setEventDesc("Suppression d'un nouvel utilisateur");
+
+                eventRepository.addEvent(e);
+
                 model.addAttribute("user", user.get());
                 return "user/delete_success";
             }
